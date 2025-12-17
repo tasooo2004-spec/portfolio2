@@ -951,6 +951,7 @@ h1, h2, .site-title {
 /* responsive menu عند عرض أقل من 768px */
 @media screen and (max-width: 768px) {
 
+    /* قائمة nav */
     nav.bloo ul {
         position: absolute;
         top: 100%;
@@ -971,22 +972,27 @@ h1, h2, .site-title {
         opacity: 0;
         transition: transform 0.3s ease, opacity 0.3s ease;
         z-index: 50;
+
+        pointer-events: none; /* تمنع أي تفاعل عندما تكون مغلقة */
     }
 
+    /* قائمة مفتوحة */
     nav.bloo ul.show {
         transform: translateY(0);
         opacity: 1;
+        pointer-events: auto; /* تسمح بالتفاعل فقط عند الفتح */
     }
 
+    /* عناصر القائمة */
     nav.bloo ul li {
         list-style: none;
         text-align: left;
     }
 
-    /* الرابط */
+    /* الروابط */
     nav.bloo ul li a {
         display: flex;
-        flex-direction: column;     /* ✅ الكلام فوق */
+        flex-direction: column;     /* الكلام فوق */
         align-items: flex-start;    /* لليسار */
         gap: 6px;
 
@@ -1002,23 +1008,42 @@ h1, h2, .site-title {
     /* أيقونة الصوت تحت الكلام */
     .audio-icon {
         font-size: 16px;
+        display: flex;
+        align-items: center;
     }
 
     .audio-icon i {
         color: #6b5b3e;
+        transition: color 0.3s ease;
     }
 
-    nav.bloo ul li a:hover {
+    /* يظهر التأثير فقط عندما القائمة مفتوحة */
+    nav.bloo ul.show li a:hover {
         background-color: rgba(255, 255, 255, 0.9);
         color: #2a261d;
+    }
+
+    nav.bloo ul.show li a:hover .audio-icon i {
+        color: #4a3f2a;
+    }
+
+    nav.bloo ul.show li a:active .audio-icon i {
+        color: #2e261a;
     }
 
     /* زر القائمة */
     .menu-btn {
         display: block;
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 28px;
+        color: #fff;
+        z-index: 200;
     }
 
-    /* ===== الهيدر في الموبايل ===== */
+    /* الهيدر في الموبايل */
     header.heroo {
         position: fixed;
         top: 0;
@@ -1035,29 +1060,10 @@ h1, h2, .site-title {
         font-size: 28px;
         margin: 0;
     }
-    .audio-icon{
-        display: flex;
-        align-items: center;
-      
-    }
-    
-
-    .menu-btn {
-        position: absolute;
-        left: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 28px;
-        color: #fff;
-        z-index: 200;
-    }
-/* اللون الأغمق عند المرور على الأيقونة فقط */
-nav.bloo ul li a:hover .audio-icon i {
-    color: #4a3f2a;  /* أو أي لون أغمق تحبه */
-    transition: color 0.3s ease;
 }
 
     }
+
 
 
 
