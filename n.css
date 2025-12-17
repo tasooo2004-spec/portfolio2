@@ -617,7 +617,7 @@ h1, h2, .site-title {
 }
 
 .audio-icon i:hover {
-  color: #f0e6d2;
+  color: #ad9d57;
   transform: scale(1.1);
 }
   /*   تعديلات لي لوكل استورج */
@@ -948,7 +948,9 @@ h1, h2, .site-title {
 }
 
 
+/* responsive menu عند عرض أقل من 768px */
 @media screen and (max-width: 768px) {
+
     nav.bloo ul {
         position: absolute;
         top: 100%;
@@ -956,47 +958,107 @@ h1, h2, .site-title {
         width: 100%;
         background-color: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(5px);
+
         flex-direction: column;
         padding: 15px 0;
         gap: 10px;
+
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-         
 
-        /* تأثير الإخفاء */
         transform: translateY(-20px);
         opacity: 0;
-        visibility: hidden; /* هذا يمنع التفاعل مع القائمة */
-        pointer-events: none; /* لا يمكن الضغط على الروابط عند الإخفاء */
-        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+        transition: transform 0.3s ease, opacity 0.3s ease;
         z-index: 50;
     }
 
     nav.bloo ul.show {
         transform: translateY(0);
         opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-        nav.bloo ul li a {
-        color: #6b5b3e !important; /* نفس لون أيقونة الصوت */
+    nav.bloo ul li {
+        list-style: none;
+        text-align: left;
     }
 
-    nav.bloo ul li a:hover {
-        color: #a28f6a !important; /* لون عند المرور */
+    /* الرابط */
+    nav.bloo ul li a {
+        display: flex;
+        flex-direction: column;     /* ✅ الكلام فوق */
+        align-items: flex-start;    /* لليسار */
+        gap: 6px;
+
+        font-size: 18px;
+        color: #6b5b3e;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+
+        transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .menu-btn {
-        display: block;
+    /* أيقونة الصوت تحت الكلام */
+    .audio-icon {
+        font-size: 16px;
     }
 
     .audio-icon i {
         color: #6b5b3e;
     }
+
+    nav.bloo ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #2a261d;
+    }
+
+    /* زر القائمة */
+    .menu-btn {
+        display: block;
+    }
+
+    /* ===== الهيدر في الموبايل ===== */
+    header.heroo {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        padding: 18px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+    }
+
+    header h1.hleoo {
+        font-size: 28px;
+        margin: 0;
+    }
+    .audio-icon{
+        display: flex;
+        align-items: center;
+      
+    }
+    
+
+    .menu-btn {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 28px;
+        color: #fff;
+        z-index: 200;
+    }
+/* اللون الأغمق عند المرور على الأيقونة فقط */
+nav.bloo ul li a:hover .audio-icon i {
+    color: #4a3f2a;  /* أو أي لون أغمق تحبه */
+    transition: color 0.3s ease;
 }
+
+    }
+
 
 
 
