@@ -955,7 +955,7 @@ h1, h2, .site-title {
         top: 100%; /* أسفل الهدر */
         left: 0;
         width: 100%; /* عرض كامل المتصفح */
-        background-color: rgba(255, 255, 255, 0.7); /* شفاف مع لمسة بيج فاتح */
+        background-color: rgba(255, 255, 255, 0.5); /* شفاف مع لمسة بيج فاتح */
         backdrop-filter: blur(5px); /* تأثير ضبابي أنيق */
         flex-direction: column;
         padding: 15px 0;
@@ -993,12 +993,16 @@ h1, h2, .site-title {
         background-color: rgba(200, 180, 150, 0.3); /* لمسة عند المرور */
           color: #a28f6a;
     }
+         .audio-icon i {
+        color: #6b5b3e; /* نفس لون الخط في القائمة أو أي لون تريده */
+    }
 
     /* زر القائمة يظهر فقط على الشاشات الصغيرة */
     .menu-btn {
         display: block;
     }
 }
+
 
 
 
