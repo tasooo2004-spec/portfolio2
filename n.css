@@ -1,0 +1,1010 @@
+/* === إعادة ضبط عام === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+   font-family: 'Rakkas', cursive;
+    direction: rtl;
+    overflow-x: hidden;
+    background: #f5f5f5;
+    color: #111;
+}
+
+/* === الهيدر === */
+header.heroo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+    background: rgba(159, 139, 101, 0.66);
+    backdrop-filter: blur(8px);
+}
+
+header h1.hleoo {
+    color: #f3f3f3;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+nav.bloo ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+nav.bloo ul li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+nav.bloo ul li a:hover {
+    color: #b59d61;
+    transform: scale(1.05);
+}
+
+/* زر القائمة */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* === Hero Section === */
+.hero-carousel {
+    position: relative;
+}
+
+.hero-carousel .carousel-item {
+    height: 90vh;
+}
+
+.hero-carousel .hero-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(60%);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-overlay h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+.hero-overlay p {
+    font-size: 1.3em;
+    margin-top: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #979071,#b59d61 );
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    margin-top: 15px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.hero-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(193, 170, 102, 0.8);
+}
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 10;
+}
+
+.carousel-caption h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      
+}
+
+.carousel-caption p {
+    font-size: 1.3em;
+    margin-top: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.carousel-caption .hero-btn {
+    margin-top: 15px;
+    padding: 12px 22px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #979071,#b59d61 );
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.carousel-caption .hero-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(193, 170, 102, 0.8);
+}
+
+
+h1, h2, .site-title {
+    font-family: 'Aref Ruqaa', serif;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* === Cards Section === */
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    width: 21.25em;
+    box-shadow:0 5px 25px rgba(247, 226, 140, 0.5);
+    border-radius: 50px; /* ← هذا هو */
+    padding: 50px;
+    margin: 25px;
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px rgba(247, 226, 140, 0.6);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    color: #979071;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.info {
+    text-align: center;
+}
+
+.info h3 {
+    color: #b59d61;
+    margin-bottom: 8px;
+    font-size: 1.3em;
+}
+
+.info p {
+    color: #979071;
+    line-height: 1.5;
+}
+
+/* === Feature Cards (.feature-card) === */
+:root {
+    --gap:20px;
+    --radius:15px;
+    --overlay-color: rgba(0,0,0,0.35);
+    --btn-color:rgba(247, 226, 140, 0.5);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    padding: 20px;
+}
+
+
+.feature-card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    transition: transform .3s ease, box-shadow .3s ease;
+    cursor: pointer;
+    background: #fff;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 48px rgba(0,0,0,0.15);
+}
+
+.feature-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 240px;
+    transition: transform .4s ease;
+}
+
+.feature-card:hover .feature-img {
+    transform: scale(1.08);
+}
+
+.feature-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.0) 0%, var(--overlay-color) 75%);
+    transition: background .3s ease;
+}
+
+.feature-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 18px;
+    color: #fff;
+    z-index: 2;
+}
+.feature-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.feature-desc {
+    font-size: 14px;
+    opacity: .95;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.feature-btn {
+    display: inline-block;
+    background: var(--btn-color);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.feature-btn:hover {
+    background:#f39494;
+    transform: translateY(-2px);
+}
+
+/* === Section Target Styling === */
+.section-target {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.section-target h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+}
+
+.section-target p {
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* === Titles === */
+.title, h2 {
+    display: flex;
+    justify-content: center;
+    color: #ad9d57;
+    font-size: 2.7em;
+    font-weight: 800;
+    margin-top: 60px ;
+    margin-bottom: 40px;
+}
+
+.tasoo{
+      display: flex;
+    justify-content: center;
+    color: #ad9d57;
+    font-size: 2.7em;
+    font-weight: 800;
+    margin-top: 40px ;
+}
+/* === Flip Cards === */
+.section-flip {
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+.flip-wrap {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    grid-auto-rows: auto;
+}
+
+.flip-wrap .flip-card:nth-child(4),
+.flip-wrap .flip-card:nth-child(5) {
+    justify-self: center;
+}
+
+.flip-card {
+    width: 200px;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.flip-front, .flip-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    transition: all 0.5s ease;
+}
+
+.flip-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease, filter 0.5s ease;
+}
+
+.flip-back {
+    background: rgba(237, 209, 143, 0.2);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0;
+    z-index: 2;
+}
+
+.flip-card:hover .flip-front img {
+    filter: brightness(50%);
+    transform: scale(1.05);
+}
+
+.flip-card:hover .flip-back {
+    opacity: 1;
+}
+
+/* === Swiper Styles === */
+.fashion-swiper .swiper-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.fashion-swiper .swiper-slide {
+    margin: 0 !important;
+    padding: 10px !important;
+    width: auto !important;
+}
+
+.slide-img {
+    width: 100%;
+    max-width: 230px;
+    aspect-ratio: 1 / 1.35;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #111;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(246, 204, 145, 0.15);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.slide-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .35s ease, filter .35s ease;
+}
+
+.slide-img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px rgba(0,0,0,0.28);
+}
+
+.slide-img:hover img {
+    transform: scale(1.06);
+    filter: brightness(72%);
+}
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(3px);
+    transition: opacity .3s ease;
+}
+
+.slide-img:hover .slide-overlay {
+    opacity: 1;
+}
+
+.slide-overlay h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+    margin-bottom: 5px;
+}
+.section-flip{
+    margin-top: 10px;
+}
+
+
+.slide-overlay p {
+    font-size: 12px;
+    color: #eee;
+}
+
+/* === عنوان فيه انميشن === */
+.animated-text span {
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* ===== Footer ===== */
+.site-footer {
+  background: rgba(159, 139, 101, 0.66);
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  font-family: 'Aref Ruqaa', serif;
+}
+
+.site-footer h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.footer-form input,
+.footer-form textarea {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.footer-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.footer-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6b5b3e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.footer-form button:hover {
+  background-color: #5a4930;
+}
+
+.footer-icons {
+  margin: 20px 0;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-icons a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.footer-icons a:hover {
+  color: #d4c09c;
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #fff;
+}
+
+
+#food-section h3 {
+  text-align: center;       /* توسيط النص أفقياً */
+  margin-bottom: 20px;      /* مسافة تحت العنوان */
+  font-size: 40px;          /* حجم الخط */
+  font-weight: bold;        /* سمك الخط */
+  font-family: 'Aref Ruqaa', serif; /* نفس خط الموقع */
+  color: #ad9d57;
+}
+
+
+#section-fashion h3{
+      text-align: center;       /* توسيط النص أفقياً */
+  margin-bottom: 20px;      /* مسافة تحت العنوان */
+  font-size: 40px;          /* حجم الخط */
+  font-weight: bold;        /* سمك الخط */
+  font-family: 'Aref Ruqaa', serif; /* نفس خط الموقع */
+  color: #ad9d57;
+}
+.flip-card{
+     font-family: 'Aref Ruqaa', serif;
+}
+/* أيقونة الصوت في الهيدر */
+.audio-icon i {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.audio-icon i:hover {
+  color: #f0e6d2;
+  transform: scale(1.1);
+}
+  /*   تعديلات لي لوكل استورج */
+/* زر البحث */
+.search-btn{
+  background:#6b5b3e;
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+/* الصندوق الكبير */
+#opinionsContainer{
+  display:none;
+  background:#fff;
+  color:#000;
+  margin:20px auto;
+  padding:15px;
+  width:90%;
+  max-width:600px;
+}
+
+/* حقل البحث */
+#searchInput{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border:1px solid #ccc;
+}
+
+/* مربع كل رأي */
+.opinion-box{
+  border:1px solid #ddd;
+  padding:10px;
+  margin-bottom:8px;
+}
+
+.opinion-box strong{
+  color:#6b5b3e;
+  font-size:13px;
+}
+#opinionsContainer {
+  display: none;
+  background: #fff;
+  margin: 20px auto;
+  padding: 15px;
+  width: 95%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+#opinionsContainer h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #6b5b3e;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.opinion-box {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+
+
+
+
+
+/* ===== Media Queries محسنة لجميع السكشنات ===== */
+
+/* شاشات متوسطة حتى 900px */
+@media (max-width: 900px) {
+
+    /* الهيدر */
+    header.heroo {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 20px;
+    }
+    header h1.hleoo {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    nav.bloo ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    nav.bloo ul li a {
+        font-size: 16px;
+    }
+
+    /* Hero Section */
+    .hero-carousel .carousel-item {
+        height: 70vh;
+    }
+    .hero-overlay h1, .carousel-caption h1 {
+        font-size: 2.5em;
+    }
+    .hero-overlay p, .carousel-caption p {
+        font-size: 1.2em;
+    }
+    .hero-btn, .carousel-caption .hero-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Cards Section */
+    .card {
+        width: 90%;
+        max-width: 300px;
+        padding: 30px;
+        margin: 25px auto;
+    }
+    .info h3 {
+        font-size: 1.2em;
+    }
+    .info p {
+        font-size: 14px;
+    }
+    .content {
+        gap: 25px;
+        justify-content: center;
+    }
+
+    /* Feature Cards */
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 20px;
+    }
+    .feature-title {
+        font-size: 18px;
+    }
+    .feature-desc {
+        font-size: 13px;
+    }
+    .feature-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    /* Flip Cards */
+    .flip-wrap {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .flip-card {
+        width: 280px;
+        height: 320px;
+    }
+    .flip-back {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    /* Slide Images */
+    .slide-img {
+        max-width: 250px;
+        aspect-ratio: 1 / 1.25;
+    }
+    .slide-overlay h4 {
+        font-size: 15px;
+    }
+    .slide-overlay p {
+        font-size: 13px;
+    }
+
+    /* Section Titles */
+    .title, .tasoo, h2 {
+        font-size: 2.3em;
+        margin-top: 50px;
+        margin-bottom: 35px;
+    }
+
+    /* Section Targets */
+    .section-target {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+    .section-target h3 {
+        font-size: 20px;
+    }
+    .section-target p {
+        font-size: 15px;
+    }
+
+    /* Footer */
+    .site-footer h3 {
+        font-size: 22px;
+    }
+    .footer-form input, .footer-form textarea {
+        width: 90%;
+        font-size: 13px;
+    }
+    .footer-form button {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+
+  /* ===== كل السكشنات العادية ===== */
+  section:not(.section-flip):not(#section-fashion):not(#food-section) {
+    padding: 40px 16px;
+    margin-bottom: 45px;
+  }
+
+  /* ===== العناوين ===== */
+  .title,
+  .tasoo,
+  h2 {
+    font-size: 2.4em;
+    margin: 35px 0;
+    text-align: center;
+  }
+
+  /* ===== Cards Section ===== */
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 35px;
+  }
+
+  /* ===== Feature Cards ===== */
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0;
+  }
+
+  .feature-img {
+    height: 300px;
+  }
+
+  .feature-title {
+    font-size: 22px;
+  }
+
+  .feature-desc {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ===== Flip Cards ===== */
+  .flip-wrap {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .flip-card {
+    width: 100%;
+    max-width: 360px;
+    height: 420px;
+  }
+
+  .flip-back {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  /* ===== Sections النصية ===== */
+  .section-target {
+    padding: 25px;
+    margin: 30px 12px;
+  }
+
+  .section-target h3 {
+    font-size: 24px;
+  }
+
+  .section-target p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ===== Footer فقط ===== */
+  .site-footer {
+    padding: 45px 16px;
+  }
+
+  .site-footer h3 {
+    font-size: 22px;
+  }
+
+  .footer-form input,
+  .footer-form textarea {
+    width: 100%;
+    max-width: 340px;
+    font-size: 15px;
+  }
+}
+
+
+/* زر القائمة */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333; /* لون الأيقونة مناسب على أي خلفية */
+    background: none;
+    border: none;
+    padding: 5px 10px;
+}
+
+
+/* responsive menu عند عرض أقل من 768px */
+@media screen and (max-width: 768px) {
+    nav.bloo ul {
+        position: absolute; /* أسفل الهدر مباشرة */
+        top: 100%; /* أسفل الهدر */
+        left: 0;
+        width: 100%; /* عرض كامل المتصفح */
+        background-color: rgba(255, 255, 255, 0.7); /* شفاف مع لمسة بيج فاتح */
+        backdrop-filter: blur(5px); /* تأثير ضبابي أنيق */
+        flex-direction: column;
+        padding: 15px 0;
+        gap: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transform: translateY(-20px); /* يبدأ قريب من الهدر */
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 50;
+    }
+
+    nav.bloo ul.show {
+        transform: translateY(0); /* تنزل من الهدر */
+        opacity: 1;
+    }
+
+    nav.bloo ul li {
+        list-style: none;
+        text-align: center;
+    }
+
+    nav.bloo ul li a {
+        font-size: 18px;
+        color: #6b5b3e;/* لون الخط مناسب على الخلفية الشفافة */
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+        transition: background 0.3s ease, color 0.3s ease;
+        border-radius: 5px;
+    }
+
+    nav.bloo ul li a:hover {
+        background-color: rgba(200, 180, 150, 0.3); /* لمسة عند المرور */
+          color: #a28f6a;
+    }
+
+    /* زر القائمة يظهر فقط على الشاشات الصغيرة */
+    .menu-btn {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
