@@ -997,7 +997,7 @@ h1, h2, .site-title {
         gap: 6px;
 
         font-size: 18px;
-        color: #6b5b3e;
+        color: #7b6a4b;
         text-decoration: none;
         padding: 10px 20px;
         border-radius: 5px;
@@ -1020,15 +1020,15 @@ h1, h2, .site-title {
     /* يظهر التأثير فقط عندما القائمة مفتوحة */
     nav.bloo ul.show li a:hover {
         background-color: rgba(255, 255, 255, 0.9);
-        color: #2a261d;
+        color: #cbb174;
     }
 
     nav.bloo ul.show li a:hover .audio-icon i {
-        color: #4a3f2a;
+        color: #8e7b55;
     }
 
     nav.bloo ul.show li a:active .audio-icon i {
-        color: #2e261a;
+        color: #aa8e65;
     }
 
     /* زر القائمة */
@@ -1062,7 +1062,6 @@ h1, h2, .site-title {
     }
 }
 
-    }
 
 
 
