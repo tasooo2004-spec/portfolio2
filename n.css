@@ -980,14 +980,15 @@ h1, h2, .site-title {
         pointer-events: auto;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
-        nav.bloo ul li a {
-        font-size: 18px;
-        color: #6b5b3e;/* لون الخط مناسب على الخلفية الشفافة */
-        text-decoration: none;
-        padding: 10px 15px;
-        display: block;
-        transition: background 0.3s ease, color 0.3s ease;
-        border-radius: 5px;
+       nav.bloo ul li a {
+        color: #6b5b3e; /* نفس لون أيقونة الصوت */
+    }
+
+    nav.bloo ul li a:hover {
+        color: #a28f6a; /* لون عند المرور */
+    }
+}
+     
 
     .menu-btn {
         display: block;
@@ -997,6 +998,7 @@ h1, h2, .site-title {
         color: #6b5b3e;
     }
 }
+
 
 
 
