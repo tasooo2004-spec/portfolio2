@@ -962,7 +962,7 @@ h1, h2, .site-title {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-           color: #6b5b3e;
+         
 
         /* تأثير الإخفاء */
         transform: translateY(-20px);
@@ -980,6 +980,14 @@ h1, h2, .site-title {
         pointer-events: auto;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
+        nav.bloo ul li a {
+        font-size: 18px;
+        color: #6b5b3e;/* لون الخط مناسب على الخلفية الشفافة */
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+        transition: background 0.3s ease, color 0.3s ease;
+        border-radius: 5px;
 
     .menu-btn {
         display: block;
@@ -989,6 +997,7 @@ h1, h2, .site-title {
         color: #6b5b3e;
     }
 }
+
 
 
 
