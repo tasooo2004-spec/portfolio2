@@ -948,60 +948,48 @@ h1, h2, .site-title {
 }
 
 
-/* responsive menu عند عرض أقل من 768px */
 @media screen and (max-width: 768px) {
     nav.bloo ul {
-        position: absolute; /* أسفل الهدر مباشرة */
-        top: 100%; /* أسفل الهدر */
+        position: absolute;
+        top: 100%;
         left: 0;
-        width: 100%; /* عرض كامل المتصفح */
-        background-color: rgba(255, 255, 255, 0.9); /* شفاف مع لمسة بيج فاتح */
-        backdrop-filter: blur(5px); /* تأثير ضبابي أنيق */
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(5px);
         flex-direction: column;
         padding: 15px 0;
         gap: 10px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transform: translateY(-20px); /* يبدأ قريب من الهدر */
+
+        /* تأثير الإخفاء */
+        transform: translateY(-20px);
         opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        visibility: hidden; /* هذا يمنع التفاعل مع القائمة */
+        pointer-events: none; /* لا يمكن الضغط على الروابط عند الإخفاء */
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
         z-index: 50;
     }
 
     nav.bloo ul.show {
-        transform: translateY(0); /* تنزل من الهدر */
+        transform: translateY(0);
         opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    nav.bloo ul li {
-        list-style: none;
-        text-align: center;
-    }
-
-    nav.bloo ul li a {
-        font-size: 18px;
-        color: #6b5b3e;/* لون الخط مناسب على الخلفية الشفافة */
-        text-decoration: none;
-        padding: 10px 15px;
-        display: block;
-        transition: background 0.3s ease, color 0.3s ease;
-        border-radius: 5px;
-    }
-
-    nav.bloo ul li a:hover {
-        background-color: rgba(200, 180, 150, 0.3); /* لمسة عند المرور */
-          color: #a28f6a;
-    }
-         .audio-icon i {
-        color: #6b5b3e; /* نفس لون الخط في القائمة أو أي لون تريده */
-    }
-
-    /* زر القائمة يظهر فقط على الشاشات الصغيرة */
     .menu-btn {
         display: block;
     }
+
+    .audio-icon i {
+        color: #6b5b3e;
+    }
 }
+
+
 
 
 
