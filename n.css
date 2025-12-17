@@ -980,15 +980,14 @@ h1, h2, .site-title {
         pointer-events: auto;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
-       nav.bloo ul li a {
-        color: #6b5b3e; /* نفس لون أيقونة الصوت */
+
+        nav.bloo ul li a {
+        color: #6b5b3e !important; /* نفس لون أيقونة الصوت */
     }
 
     nav.bloo ul li a:hover {
-        color: #a28f6a; /* لون عند المرور */
+        color: #a28f6a !important; /* لون عند المرور */
     }
-}
-     
 
     .menu-btn {
         display: block;
@@ -998,6 +997,7 @@ h1, h2, .site-title {
         color: #6b5b3e;
     }
 }
+
 
 
 
